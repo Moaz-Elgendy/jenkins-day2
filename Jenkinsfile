@@ -88,7 +88,7 @@ pipeline {
             steps {
                 sh '''
                     cd terraform-${ENVIRONMENT}
-                    if terraform workspace list | grep -qE "^\*?[[:space:]]+${ENVIRONMENT}$"; then
+                    if terraform workspace list | awk '{print $NF}' | grep -qx "${ENVIRONMENT}"; then
                         echo "Workspace '${ENVIRONMENT}' already exists -> selecting it"
                         terraform workspace select ${ENVIRONMENT}
                     else
