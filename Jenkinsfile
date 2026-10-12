@@ -17,7 +17,7 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 sh '''
-                    sudo apt-get update && sudo apt-get upgrade -y
+                    sudo apt-get update
                 '''
 
                 sh '''
