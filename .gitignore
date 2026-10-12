@@ -1,2 +1,18 @@
 .terraform/
-.terraform*
+.terraform.tfstate.lock.info
+
+*.tfstate
+*.tfstate.*
+crash.log
+crash.*.log
+
+# Jenkins-created working dirs and saved plan files
+terraform-dev/
+terraform-stg/
+terraform-prod/
+*-v1
+
+# Local env/output artifacts
+*.tfplan
+*.zip
+.aws/
